@@ -10,10 +10,21 @@ class EventForm extends Component {
     hostedBy: "",
   };
 
+  componentDidMount = () => {
+    if (this.props.selectedEvent !== null) {
+      this.setState({
+        ...this.props.selectedEvent,
+      });
+    }
+  };
+
   handleFormSubmit = (evt) => {
     evt.preventDefault();
-    console.log(this.state);
-    this.props.createEvent(this.state);
+    if (this.state.id) {
+      this.props.updateEvent(this.state);
+    } else {
+      this.props.createEvent(this.state);
+    }
   };
 
   handleInputChange = (evt) => {
@@ -25,9 +36,8 @@ class EventForm extends Component {
   render() {
     const { cancelFormOpen } = this.props;
     const { title, date, city, venue, hostedBy } = this.state;
-    console.log("testing event form");
-    console.log(this.state);
 
+    console.log("In rendering", this.state)
     return (
       <Segment>
         <Form onSubmit={this.handleFormSubmit} autoComplete='off'>
