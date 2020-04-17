@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "./app/store/configureStore";
+import ScrollTop from "./app/common/util/ScrollTop";
 
 const rootEL = document.getElementById("root");
 // get the store object
@@ -15,9 +16,11 @@ let render = () => {
   ReactDOM.render(
     // Provider: provides the redux store to the application
     // BrowseRouter: provides the routing functionality to the application
-    <Provider store={store}> 
+    <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <ScrollTop>
+          <App />
+        </ScrollTop>
       </BrowserRouter>
     </Provider>,
 

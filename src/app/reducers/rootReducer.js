@@ -4,7 +4,7 @@ import eventReducer from "../../features/events/eventReducer";
 
 const rootReducer = combineReducers({
     test: testReducer,
-    event: eventReducer
+    events: eventReducer
 })
 
 export default rootReducer;

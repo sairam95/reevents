@@ -37,7 +37,6 @@ class EventForm extends Component {
     const { cancelFormOpen } = this.props;
     const { title, date, city, venue, hostedBy } = this.state;
 
-    console.log("In rendering", this.state)
     return (
       <Segment>
         <Form onSubmit={this.handleFormSubmit} autoComplete='off'>
