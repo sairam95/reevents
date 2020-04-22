@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { incrementCounter, decrementCounter } from "./testActions";
 import { Button } from "semantic-ui-react";
+import PlacesAutocomplete from "./TestPlaceInput";
+import SimpleMap from "./SimpleMap";
 
 const mapState = (state) => ({
   data: state.test.data, // test refers to the testReducer
@@ -28,6 +30,11 @@ class TestComponent extends Component {
           negative
           content='Decrement'
         ></Button>
+        <br>
+        </br>
+        <br></br>
+        <PlacesAutocomplete></PlacesAutocomplete>
+        <SimpleMap></SimpleMap>
       </div>
     );
   }
