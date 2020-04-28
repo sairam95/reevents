@@ -10,12 +10,14 @@ import UserDetailedPage from "../../features/UserDetailed/UserDetailedPage";
 import SettingsDashboard from "../../features/settings/SettingsDashboard";
 import EventForm from "../../features/events/EventForm/EventForm";
 import TestComponent from "../../features/testarea/TestComponent";
+import ModalManager from "../../features/modals/ModalManager";
 
 class App extends Component {
   render() {
     return (
       // "exact" keyword within Route provides the complete route path
       <Fragment>
+        <ModalManager />
         <Route exact path="/" component={HomePage}></Route>
         <Route
           path="/(.+)"
