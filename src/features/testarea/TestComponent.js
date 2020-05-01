@@ -9,7 +9,8 @@ import {openModal} from "../modals/modalActions";
 const mapState = (state) => ({
   data: state.test.data, // test refers to the testReducer
   loading: state.async.loading,
-  buttonName: state.async.elementName
+  buttonName: state.async.elementName,
+  type: state.async.type
 });
 const actions = {
   incrementAsync,
@@ -26,7 +27,8 @@ class TestComponent extends Component {
   }
 
   render() {
-    const { data, incrementAsync, decrementAsync, openModal, loading, buttonName } = this.props;
+    const { data, incrementAsync, decrementAsync, openModal, loading, buttonName, type } = this.props;
+    console.log("Redux Action:", type);
     return (
       <div>
         <h1>TestComponent</h1>
